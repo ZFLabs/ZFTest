@@ -1,0 +1,33 @@
+{
+    "name": "juizmill/zf-test",
+    "description": "Módulo de testes em ZF 2 baseado no curso da School of Net",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "module",
+        "zf2",
+		"son",
+        "WebPatterns"
+    ],
+    "homepage": "http://framework.zend.com",
+    "authors": [
+        {
+            "name": "Wesley Willians",
+            "email": "wesleywillians@gmail.com"
+        },
+        {
+            "name": "Jesus Vieira",
+            "email": "jesusvieiradelima@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.5"
+    },
+    "autoload": {
+        "psr-0": {
+            "SONBase": "src/"
+        }
+	}
+
+}
