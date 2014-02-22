@@ -8,6 +8,11 @@ use Zend\Mvc\Router\RouteMatch;
 use Zend\View\Renderer\PhpRenderer;
 use Zend\View\Resolver;
 
+/**
+ * ControllerTestCase
+ * Class ControllerTestCase
+ * @package ZFTest\Test
+ */
 abstract class ControllerTestCase extends TestCase
 {
     /**
@@ -60,6 +65,9 @@ abstract class ControllerTestCase extends TestCase
      */
     protected $controllerRoute;
 
+    /**
+     * setup
+     */
     public function setup()
     {
         parent::setup();
@@ -78,6 +86,9 @@ abstract class ControllerTestCase extends TestCase
         $this->controller->setServiceLocator($this->serviceManager);
     }
 
+    /**
+     * tearDown
+     */
     public function tearDown()
     {
         parent::tearDown();

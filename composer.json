@@ -1,6 +1,6 @@
 {
     "name": "juizmill/zf-test",
-    "description": "Módulo de testes em ZF 2 baseado no curso da School of Net",
+    "description": "Módulo de testes em ZF2 baseado no curso da School of Net",
     "type": "library",
     "license": "MIT",
     "keywords": [

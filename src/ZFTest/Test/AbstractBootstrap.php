@@ -7,13 +7,19 @@ use Zend\ServiceManager\ServiceManager;
 use Zend\Stdlib\ArrayUtils;
 use RuntimeException;
 
-
+/**
+ * Class AbstractBootstrap
+ * @package ZFTest\Test
+ */
 abstract class AbstractBootstrap
 {
     protected static $serviceManager;
     protected static $config;
     protected static $bootstrap;
 
+    /**
+     * init
+     */
     public static function init()
     {
         $root = __DIR__ . '/../../../../../../';
@@ -57,16 +63,28 @@ abstract class AbstractBootstrap
         static::$config = $config;
     }
 
+    /**
+     * getServiceManager
+     * @return mixed
+     */
     public static function getServiceManager()
     {
         return static::$serviceManager;
     }
 
+    /**
+     * getConfig
+     * @return mixed
+     */
     public static function getConfig()
     {
         return static::$config;
     }
 
+    /**
+     * initAutoloader
+     * @throws \RuntimeException
+     */
     protected static function initAutoloader()
     {
         $vendorPath = static::findParentPath('vendor');
@@ -94,6 +112,11 @@ abstract class AbstractBootstrap
         ));
     }
 
+    /**
+     * findParentPath
+     * @param $path
+     * @return bool|string
+     */
     protected static function findParentPath($path)
     {
         $dir = __DIR__;
