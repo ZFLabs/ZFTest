@@ -18,35 +18,35 @@ abstract class ControllerTestCase extends TestCase
     /**
      * The ActionController we are testing
      *
-     * @var Zend\Mvc\Controller\AbstractActionController
+     * @var \Zend\Mvc\Controller\AbstractActionController
      */
     protected $controller;
 
     /**
      * A request object
      *
-     * @var Zend\Http\Request
+     * @var \Zend\Http\Request
      */
     protected $request;
 
     /**
      * A response object
      *
-     * @var Zend\Http\Response
+     * @var \Zend\Http\Response
      */
     protected $response;
 
     /**
      * The matched route for the controller
      *
-     * @var Zend\Mvc\Router\RouteMatch
+     * @var \Zend\Mvc\Router\RouteMatch
      */
     protected $routeMatch;
 
     /**
      * An MVC event to be assigned to the controller
      *
-     * @var Zend\Mvc\MvcEvent
+     * @var \Zend\Mvc\MvcEvent
      */
     protected $event;
 
@@ -73,6 +73,7 @@ abstract class ControllerTestCase extends TestCase
         parent::setup();
         $this->controller = new $this->controllerFQDN;
         $this->request    = new Request();
+        $this->event = new MvcEvent();
         $this->routeMatch = new RouteMatch(array(
             'router' => array(
                 'routes' => array(
@@ -81,7 +82,7 @@ abstract class ControllerTestCase extends TestCase
             )
         ));
         $this->event->setRouteMatch($this->routeMatch);
-        
+
         $this->controller->setEvent($this->event);
         $this->controller->setServiceLocator($this->serviceManager);
     }
